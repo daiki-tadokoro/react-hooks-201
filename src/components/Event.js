@@ -1,7 +1,6 @@
 import React from "react";
 
 const Event = ({ event, dispatch }) => {
-  console.log("event", event);
   const id = event.id;
   const handleClickDeleteButton = () => {
     const result = window.confirm(
