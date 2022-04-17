@@ -4,11 +4,14 @@ const Event = ({ event, dispatch }) => {
   console.log("event", event);
   const id = event.id;
   const handleClickDeleteButton = () => {
-    dispatch({ type: "DELETE_EVENT", id });
+    const result = window.confirm(
+      `イベント(id=${id})を本当に削除してもよいですか？`
+    );
+    if (result) dispatch({ type: "DELETE_EVENT", id });
   };
   return (
     <tr>
-      <td>{event.id}</td>
+      <td>{id}</td>
       <td>{event.title}</td>
       <td>{event.body}</td>
       <td>
